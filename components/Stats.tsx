@@ -10,7 +10,7 @@ const Stats = () => {
         { value: 200, suffix: '%', label: 'Improvement in Mobile Conversions' },
         { value: 100, suffix: '%', label: 'Accuracy in Automated Processes' },
     ];
-    
+
     return (
         <div className="py-16 sm:py-24 border-t border-gray-800">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -19,8 +19,8 @@ const Stats = () => {
                     {stats.map((stat, i) => (
                         <MagicCard key={i} gradientFrom="#FF6B35" gradientTo="#1A1A1A" className="p-8 text-center">
                             <BorderBeam colorFrom="#FF6B35" colorTo="#FFFFFF" size={100} duration={6} delay={i * 0.5} />
-                            <div className="text-5xl lg:text-6xl font-extrabold text-white flex items-center justify-center">
-                                <NumberTicker value={stat.value} />
+                            <div className="text-5xl lg:text-6xl font-extrabold text-black flex items-center justify-center">
+                                <span>{stat.value}</span>
                                 <span>{stat.suffix}</span>
                             </div>
                             <p className="mt-2 text-sm text-gray-400 max-w-[150px] mx-auto">{stat.label}</p>
