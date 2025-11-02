@@ -28,7 +28,7 @@ const Hero = () => (
                     </h1>
                     <BlurFade delay={0.3}>
                         <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto">
-                            SASEK Labs creates visually striking 3D websites that captivate customers and intelligent automation systems that eliminate repetitive tasks. Focus on growth while we handle the tech.
+                            SASEK Labs creates visually striking websites that captivate customers and intelligent automation systems that eliminate repetitive tasks. Focus on growth while we handle the tech.
                         </p>
                     </BlurFade>
                     <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">

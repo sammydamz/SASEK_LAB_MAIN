@@ -27,7 +27,7 @@ const Team = () => (
                 data-animate="fade-in"
                 data-animate-delay="200"
             >
-                SASEK Labs specializes in creating stunning 3D websites and intelligent automation solutions for businesses worldwide. We combine deep understanding of local markets with cutting-edge global technology standards to deliver transformative results.
+                SASEK Labs specializes in creating stunning websites and intelligent automation solutions for businesses worldwide. We combine deep understanding of local markets with cutting-edge global technology standards to deliver transformative results.
             </p>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div 
