@@ -23,7 +23,8 @@
       "mcp__chrome-devtools__performance_start_trace",
       "mcp__chrome-devtools__performance_analyze_insight",
       "Bash(npm run build:*)",
-      "Bash(time:*)"
+      "Bash(time:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

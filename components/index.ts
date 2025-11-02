@@ -3,6 +3,7 @@ export { default as Hero } from './Hero';
 export { default as Stats } from './Stats';
 export { default as ClientWins } from './ClientWins';
 export { default as StartupPartner } from './StartupPartner';
+export { default as Service2 } from './Service2';
 export { default as CaseStudies } from './CaseStudies';
 export { default as Team } from './Team';
 export { default as Priority } from './Priority';
