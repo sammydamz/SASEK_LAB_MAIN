@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "mcp__gsap-master__understand_and_create_animation",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "mcp__chrome-devtools__new_page",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__wait_for",
+      "mcp__chrome-devtools__list_console_messages",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__navigate_page_history",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__list_pages",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__gsap-master__create_production_pattern",
+      "mcp__chrome-devtools__select_page",
+      "Bash(curl:*)",
+      "mcp__gsap-master__debug_animation_issue",
+      "mcp__gsap-master__get_gsap_api_expert",
+      "mcp__chrome-devtools__performance_start_trace",
+      "mcp__chrome-devtools__performance_analyze_insight",
+      "Bash(npm run build:*)",
+      "Bash(time:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

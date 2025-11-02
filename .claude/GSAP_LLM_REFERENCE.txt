@@ -1,0 +1,175 @@
+# GSAP DOCUMENTATION (LLM OPTIMIZED)
+
+## GSAP Core Methods
+
+### Tweening
+- gsap.to() - Animate to values
+- gsap.from() - Animate from values  
+- gsap.fromTo() - Set start and end values
+- gsap.set() - Set immediate values
+
+### Timeline
+- gsap.timeline() - Create timeline for sequencing
+- timeline.add() - Add tweens/animations to timeline
+- timeline.to() / timeline.from() / timeline.fromTo()
+- timeline.play() / timeline.pause() / timeline.reverse()
+- timeline.seek() - Jump to specific point
+- timeline.addLabel() - Named positions
+- timeline.stagger() - Stagger effect
+
+### Animation Control
+- gsap.killTweensOf() - Kill animations on target
+- gsap.isTweening() - Check if tweening
+- gsap.getTweensOf() - Get all tweens of target
+- tween.pause() / tween.play() / tween.reverse()
+
+### Configuration
+- gsap.defaults() - Set global defaults
+- gsap.config() - Configure GSAP settings
+- gsap.registerPlugin() - Register plugins
+- gsap.context() - Create isolated animation context
+
+## Essential Plugins
+
+### ScrollTrigger (scroll-based animations)
+- ScrollTrigger.create() - Create scroll trigger
+- trigger.pin - Pin element while scrolling
+- trigger.start / trigger.end - When to start/end
+- ScrollTrigger.batch() - Batch multiple elements
+- ScrollTrigger.refresh() - Refresh trigger calculations
+
+### SplitText (text animations)
+- SplitText - Split text into chars/words/lines
+- split.chars / split.words / split.lines
+- Animate individual text pieces
+
+### Observer (input tracking)
+- Observer.create() - Track mouse/touch
+- Detect direction and velocity
+
+### Draggable
+- Draggable.create() - Make element draggable
+- Advanced momentum/throw animations
+
+### MotionPath
+- Animate along SVG paths
+- MotionPathPlugin.getLength() - Get path length
+
+## Animation Config Options
+
+### Common vars
+- duration - Animation length (default: 0.5s)
+- delay - Delay before start
+- ease - Easing function (default: "power2.inOut")
+- stagger - Delay between multi-element animations
+- repeat - Repeat count (-1 = infinite)
+- repeatDelay - Delay between repeats
+- yoyo - Reverse animation each repeat
+- onComplete - Callback when done
+- onStart - Callback when starting
+- onUpdate - Callback each frame
+
+### CSS Properties
+- Can animate any CSS property via camelCase
+- Transform properties: x, y, rotation, scale, etc.
+- Examples: opacity, backgroundColor, borderRadius
+
+## Easing Functions
+
+Common eases:
+- "power1.inOut" - Light easing
+- "power2.inOut" - Medium easing
+- "power4.inOut" - Strong easing
+- "elastic.out" - Bouncy
+- "back.out" - Overshoot
+- "circ.inOut" - Circular
+- "expo.out" - Exponential
+- "custom(0.1, 0.8, 0.9, 1)" - CustomEase
+
+## Position Parameter (Timeline)
+
+Timeline position can be:
+- Number: absolute time (0, 0.5, 1)
+- Label: "myLabel"
+- Relative: "+=0.5" (0.5s after last)
+- Relative: "-=0.5" (0.5s before last)
+- Relative: ">+=0.2" (0.2s after next child)
+- "<" or "<0.5" (align with previous)
+
+## Utility Methods
+
+- gsap.utils.toArray() - Convert to array
+- gsap.utils.mapRange(min1, max1, min2, max2) - Map values
+- gsap.utils.normalize(min, max) - Normalize 0-1
+- gsap.utils.interpolate(start, end) - Interpolate values
+- gsap.utils.random(min, max) - Random number
+- gsap.utils.clamp(min, max, value) - Clamp value
+- gsap.utils.distribute() - Distribute values
+
+## Performance Tips
+
+1. Use contexts (gsap.context) to scope animations
+2. Kill tweens on cleanup to prevent memory leaks
+3. Use willChange CSS for animated properties
+4. Batch animations when possible (ScrollTrigger.batch)
+5. Use x/y instead of left/top (GPU accelerated)
+6. Throttle scroll events with ScrollTrigger
+7. Use matchMedia for responsive animations
+
+## React Integration Pattern
+
+```
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+
+export function MyComponent() {
+  const ref = useRef(null);
+  
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(ref.current, { duration: 1, opacity: 1 });
+    });
+    
+    return () => ctx.revert(); // Cleanup
+  }, []);
+  
+  return <div ref={ref} />;
+}
+```
+
+## Staggering Examples
+
+```
+// Stagger children
+gsap.to(".box", {
+  duration: 1,
+  y: 100,
+  stagger: 0.2  // 0.2s delay between each
+});
+
+// Stagger from center
+gsap.to(".box", {
+  duration: 1,
+  y: 100,
+  stagger: {
+    amount: 1,
+    from: "center"
+  }
+});
+```
+
+## Common Patterns
+
+1. **Fade in on scroll**: ScrollTrigger + opacity animation
+2. **Parallax**: ScrollTrigger with y: gsap.utils.mapRange()
+3. **Text reveal**: SplitText + staggered char animation
+4. **Smooth scroll**: ScrollSmoother plugin
+5. **Page transitions**: gsap.context + timeline
+
+## Important Notes
+
+- GSAP is GPU-accelerated for transforms
+- Always clean up animations (revert context)
+- Use immediateRender: false for scroll triggers
+- Test performance on low-end devices
+- ScrollTrigger.refresh() after DOM changes
