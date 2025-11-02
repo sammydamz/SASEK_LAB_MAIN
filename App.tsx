@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import ClientWins from './components/ClientWins';
-import StartupPartner from './components/StartupPartner';
 import Service2 from './components/Service2';
 import CaseStudies from './components/CaseStudies';
 import Team from './components/Team';
@@ -42,13 +41,6 @@ export default function App() {
 
           {/* Services */}
           <LazySection rootMargin="200px" className="bg-gray-50 text-black">
-            <section>
-              <StartupPartner />
-            </section>
-          </LazySection>
-
-          {/* Service2 */}
-          <LazySection rootMargin="250px" className="bg-gray-50 text-black">
             <section>
               <Service2 />
             </section>
