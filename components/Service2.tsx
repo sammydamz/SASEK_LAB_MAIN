@@ -27,13 +27,28 @@ const Service2 = () => {
             </div>
 
             <div className="relative grid max-w-lg grid-cols-1 gap-6 mx-auto md:max-w-none lg:gap-10 md:grid-cols-2">
-              <div className="flex flex-col overflow-hidden shadow-xl">
-                <div className="flex flex-col justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7">
+              <div className="group relative flex flex-col overflow-hidden">
+                {/* Glass morphism background with backdrop blur */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl"></div>
+
+                {/* Animated gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 via-purple-400/10 to-pink-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                {/* Floating particles effect */}
+                <div className="absolute top-4 left-4 w-2 h-2 bg-blue-400/30 rounded-full animate-pulse"></div>
+                <div className="absolute top-8 right-6 w-3 h-3 bg-purple-400/30 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute bottom-6 left-8 w-2 h-2 bg-pink-400/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+                <div className="relative flex flex-col justify-between flex-1 p-8 lg:py-10 lg:px-9">
                   <div className="flex-1">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg mr-4 opacity-80"></div>
+                    <div className="flex items-center mb-6">
+                      <div className="mr-5">
+                        <div className="w-14 h-14 bg-gray-200 rounded-xl flex items-center justify-center">
+                          <span className="text-gray-500 text-xs font-medium">ICON</span>
+                        </div>
+                      </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-gray-900 font-pj">High Converting Websites</h3>
+                        <h3 className="text-xl font-bold text-gray-900 font-pj">High Converting Websites</h3>
                         <h4 className="text-lg font-medium text-gray-700 font-pj">3D & Animated Websites</h4>
                       </div>
                     </div>
@@ -60,13 +75,28 @@ const Service2 = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col overflow-hidden shadow-xl">
-                <div className="flex flex-col justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7">
+              <div className="group relative flex flex-col overflow-hidden">
+                {/* Glass morphism background with backdrop blur */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-white/40 backdrop-blur-xl border border-white/40 rounded-2xl"></div>
+
+                {/* Animated gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-green-400/10 via-teal-400/10 to-cyan-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                {/* Floating particles effect */}
+                <div className="absolute top-4 left-4 w-2 h-2 bg-green-400/30 rounded-full animate-pulse"></div>
+                <div className="absolute top-8 right-6 w-3 h-3 bg-teal-400/30 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute bottom-6 left-8 w-2 h-2 bg-cyan-400/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+                <div className="relative flex flex-col justify-between flex-1 p-8 lg:py-10 lg:px-9">
                   <div className="flex-1">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg mr-4 opacity-80"></div>
+                    <div className="flex items-center mb-6">
+                      <div className="mr-5">
+                        <div className="w-14 h-14 bg-gray-200 rounded-xl flex items-center justify-center">
+                          <span className="text-gray-500 text-xs font-medium">ICON</span>
+                        </div>
+                      </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-gray-900 font-pj">AI Automation</h3>
+                        <h3 className="text-xl font-bold text-gray-900 font-pj">AI Automation</h3>
                         <h4 className="text-lg font-medium text-gray-700 font-pj">AI Business Automation</h4>
                       </div>
                     </div>
